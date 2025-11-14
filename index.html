@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo de Productos - Impulsa360</title>
+    <title>Catálogo de Cursos - Impulsa360</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -37,14 +37,14 @@
             font-size: 1.2em;
             opacity: 0.9;
         }
-        .productos-grid {
+        .cursos-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             padding: 30px;
             margin: 0 auto;
         }
-        .producto-card {
+        .curso-card {
             background: white;
             border-radius: 15px;
             padding: 25px;
@@ -57,92 +57,84 @@
             display: flex;
             flex-direction: column;
             height: fit-content;
-            min-height: 550px;
         }
-        .producto-card:hover {
+        .curso-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
-         .producto-imagen-container {
-                    text-align: center;
-                    margin: 0 auto 20px auto;
-                    width: 100%;
-                    height: 350px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    overflow: hidden;
-                    border-radius: 12px;
-                    background: #f8f9fa;
-                    border: 2px solid #e9ecef;
-                }
-                .producto-imagen {
-                    max-width: 100%;
-                    max-height: 100%;
-                    width: auto;
-                    height: auto;
-                    object-fit: contain;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-                }
-                .producto-imagen-placeholder {
-                    width: 100%;
-                    height: 100%;
-                    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-                    border-radius: 12px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: white;
-                    font-weight: bold;
-                    font-size: 1.2em;
-                    border: 3px dashed #dee2e6;
-                    text-align: center;
-                    padding: 20px;
-                }
-        .producto-info {
-            flex-grow: 1;
+        .curso-imagen-container {
+            text-align: center;
+            margin: 0 auto 20px auto;
+            width: 100%;
+        }
+        .curso-imagen {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+            border-radius: 12px;
+            display: block;
+            margin: 0 auto;
+            border: 3px solid #e9ecef;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .curso-imagen-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 12px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        .producto-nombre {
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-weight: bold;
-            font-size: 1.4em;
-            color: #2c3e50;
-            margin-bottom: 15px;
-            line-height: 1.3;
+            font-size: 1.2em;
+            margin: 0 auto;
+            border: 3px dashed #dee2e6;
+            text-align: center;
+            padding: 20px;
         }
-        .producto-precio {
-            font-size: 1.3em;
-            color: #e74c3c;
-            font-weight: bold;
-            margin: 8px 0;
-        }
-        .producto-stock {
-            font-size: 1.1em;
-            color: #27ae60;
-            margin: 5px 0;
-        }
-        .producto-categoria {
-            font-size: 1.1em;
-            color: #9b59b6;
-            margin: 5px 0;
-        }
-        .producto-descripcion {
+        .estado-activo {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 8px 20px;
+            border-radius: 20px;
             font-size: 1em;
-            color: #7f8c8d;
-            margin: 10px 0;
-            line-height: 1.4;
-            flex-grow: 1;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
         }
         .botones-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-top: auto;
+            margin-top: 20px;
             width: 100%;
+        }
+        .boton-inscripcion {
+            background: linear-gradient(135deg, #34A853, #0F9D58);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            display: block;
+            box-sizing: border-box;
+        }
+        .boton-inscripcion:hover {
+            background: linear-gradient(135deg, #0F9D58, #34A853);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(52, 168, 83, 0.4);
+            text-decoration: none;
+            color: white;
         }
         .boton-whatsapp {
             background: linear-gradient(135deg, #25D366, #128C7E);
@@ -177,7 +169,7 @@
             border-top: 1px solid #dee2e6;
         }
         @media (max-width: 768px) {
-            .productos-grid {
+            .cursos-grid {
                 grid-template-columns: 1fr;
                 padding: 15px;
                 gap: 25px;
@@ -185,10 +177,11 @@
             .header h1 {
                 font-size: 2em;
             }
-            .producto-imagen-container {
-                height: 200px;
+            .curso-imagen {
+                max-height: 400px;
             }
-            .producto-imagen-placeholder {
+            .curso-imagen-placeholder {
+                height: 300px;
                 font-size: 1em;
             }
             .botones-container {
@@ -196,16 +189,51 @@
                 gap: 10px;
                 margin-top: 15px;
             }
+            .boton-inscripcion,
             .boton-whatsapp {
                 width: 100%;
                 padding: 16px 10px;
                 font-size: 16px;
                 min-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                box-sizing: border-box;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
-            .producto-card {
+            .curso-card {
                 padding: 20px;
                 margin: 0 5px;
-                min-height: 500px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .cursos-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 1300px;
+            }
+        }
+        @media (max-width: 480px) {
+            .cursos-grid {
+                padding: 10px;
+                gap: 20px;
+            }
+            .curso-card {
+                padding: 15px;
+            }
+            .boton-inscripcion,
+            .boton-whatsapp {
+                padding: 14px 8px;
+                font-size: 15px;
+                min-height: 44px;
+            }
+            .header {
+                padding: 30px 15px;
+            }
+            .header h1 {
+                font-size: 1.8em;
             }
         }
     </style>
@@ -213,103 +241,107 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🛍️ Catalogo de Productos</h1>
-            <p>Impulsa360 - Emprendimientos Sociales</p>
-<p><strong>Emprendedor:</strong> Freddy Jose Castro Vega</p></div>
-<div class="productos-grid">
-<div class="producto-card">
-<div class="producto-imagen-container">
-<img src="imagenes_productos/producto1.jpg" class="producto-imagen" alt="Producto">
+            <h1>🎓 Catálogo de Cursos y Capacitaciones</h1>
+            <p>Impulsa360 - Programa de Formación</p>
+<p><strong>Fundación:</strong> Fundación Colombia Creando Futuro</p>        </div>
+        <div class="cursos-grid">
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso1.jpg" class="curso-imagen" alt="CURSO BASICO DE CONTABILIDAD Y FINANZAS PARA EMPRENDEDORES">
 </div>
-<div class="producto-info">
-<div class="producto-nombre">1. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $40.000</div>
-<div class="producto-stock">📦 Stock: 6 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
-</div>
-<div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%2440.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
-</div>
-</div>
-<div class="producto-card">
-<div class="producto-imagen-container">
-<img src="imagenes_productos/producto2.jpg" class="producto-imagen" alt="Producto">
-</div>
-<div class="producto-info">
-<div class="producto-nombre">2. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $50.000</div>
-<div class="producto-stock">📦 Stock: 30 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
+<div class="curso-info">
+<div class="curso-nombre">1. CURSO BASICO DE CONTABILIDAD Y FINANZAS PARA EMPRENDEDORES</div>
+<div class="curso-categoria">📚 General</div>
+<div class="curso-duracion">⏱ 60 horas</div>
+<div class="curso-fechas">📅 25/10/2025 - 31/10/2025</div>
 </div>
 <div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%2450.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: CURSO BASICO DE CONTABILIDAD Y FINANZAS PARA EMPRENDEDORES" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+CURSO+BASICO+DE+CONTABILIDAD+Y+FINANZAS+PARA+EMPRENDEDORES" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: CURSO BASICO DE CONTABILIDAD Y FINANZAS PARA EMPRENDEDORES" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
 </div>
 </div>
-<div class="producto-card">
-<div class="producto-imagen-container">
-<img src="imagenes_productos/producto3.jpg" class="producto-imagen" alt="Producto">
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso2.jpg" class="curso-imagen" alt="MANIPULACION DE ALIMENTOS">
 </div>
-<div class="producto-info">
-<div class="producto-nombre">3. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $50.000</div>
-<div class="producto-stock">📦 Stock: 8 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
-</div>
-<div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%2450.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
-</div>
-</div>
-<div class="producto-card">
-<div class="producto-imagen-container">
-<div class="producto-imagen-placeholder">🛒 Producto<br>Producto</div>
-</div>
-<div class="producto-info">
-<div class="producto-nombre">4. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $200.000</div>
-<div class="producto-stock">📦 Stock: 9 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
+<div class="curso-info">
+<div class="curso-nombre">2. MANIPULACION DE ALIMENTOS</div>
+<div class="curso-categoria">📚 </div>
+<div class="curso-duracion">⏱ 60 horas</div>
+<div class="curso-cupos">👥 100 cupos disponibles</div>
+<div class="curso-fechas">📅 25/10/2025 - 31/10/2025</div>
 </div>
 <div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%24200.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: MANIPULACION DE ALIMENTOS" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+MANIPULACION+DE+ALIMENTOS" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: MANIPULACION DE ALIMENTOS" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
 </div>
 </div>
-<div class="producto-card">
-<div class="producto-imagen-container">
-<div class="producto-imagen-placeholder">🛒 Producto<br>Producto</div>
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso3.jpg" class="curso-imagen" alt="CURSO DE GASTRONOMIA">
 </div>
-<div class="producto-info">
-<div class="producto-nombre">5. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $100.000</div>
-<div class="producto-stock">📦 Stock: 9 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
-</div>
-<div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%24100.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
-</div>
-</div>
-<div class="producto-card">
-<div class="producto-imagen-container">
-<div class="producto-imagen-placeholder">🛒 Producto<br>Producto</div>
-</div>
-<div class="producto-info">
-<div class="producto-nombre">6. Producto</div>
-<div class="producto-categoria">🏷️ Categoria</div>
-<div class="producto-precio">💰 Precio: $1.000.000</div>
-<div class="producto-stock">📦 Stock: 8 unidades</div>
-<div class="producto-descripcion">📝 Descripcion</div>
+<div class="curso-info">
+<div class="curso-nombre">3. CURSO DE GASTRONOMIA</div>
+<div class="curso-categoria">📚 General</div>
+<div class="curso-duracion">⏱ 60 horas</div>
+<div class="curso-fechas">📅 25/10/2025 - 31/10/2025</div>
 </div>
 <div class="botones-container">
-<a href="https://wa.me/3118234985?text=Hola%21+Estoy+interesado+en+el+producto%3A+Producto+-+Precio%3A+Precio%3A+%241.000.000" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: Producto">💬 Consultar por WhatsApp</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: CURSO DE GASTRONOMIA" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+CURSO+DE+GASTRONOMIA" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: CURSO DE GASTRONOMIA" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
+</div>
+</div>
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso4.jpg" class="curso-imagen" alt="CAPACITACION DE GUIANZA TURISTICA COMUNITARIA">
+</div>
+<div class="curso-info">
+<div class="curso-nombre">4. CAPACITACION DE GUIANZA TURISTICA COMUNITARIA</div>
+<div class="curso-categoria">📚 </div>
+<div class="curso-duracion">⏱ 40 horas</div>
+<div class="curso-cupos">👥 100 cupos disponibles</div>
+<div class="curso-fechas">📅 01/11/2025 - 08/11/2025</div>
+</div>
+<div class="botones-container">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: CAPACITACION DE GUIANZA TURISTICA COMUNITARIA" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+CAPACITACION+DE+GUIANZA+TURISTICA+COMUNITARIA" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: CAPACITACION DE GUIANZA TURISTICA COMUNITARIA" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
+</div>
+</div>
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso5.jpg" class="curso-imagen" alt="REPOSTERIA">
+</div>
+<div class="curso-info">
+<div class="curso-nombre">5. REPOSTERIA</div>
+<div class="curso-categoria">📚 General</div>
+<div class="curso-duracion">⏱ 60 horas</div>
+<div class="curso-cupos">👥 10 cupos disponibles</div>
+<div class="curso-fechas">📅 23/10/2025 - 08/11/2025</div>
+</div>
+<div class="botones-container">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: REPOSTERIA" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+REPOSTERIA" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: REPOSTERIA" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
+</div>
+</div>
+<div class="curso-card">
+<div class="curso-imagen-container">
+<img src="imagenes_cursos/curso6.jpg" class="curso-imagen" alt="CURSO ASISTENTE ADMINISTRATIVO">
+</div>
+<div class="curso-info">
+<div class="curso-nombre">6. CURSO ASISTENTE ADMINISTRATIVO</div>
+<div class="curso-categoria">📚 General</div>
+<div class="curso-duracion">⏱ 60 horas</div>
+<div class="curso-cupos">👥 15 cupos disponibles</div>
+<div class="curso-fechas">📅 19/10/2025 - 08/11/2025</div>
+</div>
+<div class="botones-container">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScyAD8vdgoK737Owey-lQstLiT4YnTcCDuMxucnwU7zqtgzug/viewform?usp=header" target="_blank" class="boton-inscripcion" title="Inscribirse en el curso: CURSO ASISTENTE ADMINISTRATIVO" style="text-decoration: none; display: block; text-align: center;">📝 Inscribirse en el Curso</a>
+<a href="https://wa.me/3118234985?text=Hola%21+Tengo+consultas+sobre+el+curso%3A+CURSO+ASISTENTE+ADMINISTRATIVO" target="_blank" class="boton-whatsapp" title="Consultar por WhatsApp sobre: CURSO ASISTENTE ADMINISTRATIVO" style="text-decoration: none; display: block; text-align: center;">💬 Consultar por WhatsApp</a>
 </div>
 </div>
 </div>
 <div class="footer">
-    <p>📅 Generado el:2025-11-13 | 🛍️ Total productos: 6        </p>
+    <p>📅 Generado el:2025-11-13 | 🎓 Total cursos activos: 6        </p>
             <p>✨ Impulsa360 - Plataforma para Fundaciones y Emprendedores Sociales</p>
         </div>
     </div>
